@@ -76,6 +76,7 @@
 
     //comments.splice(index, 1);  // content is here
 
+    // rebuild the array minus the item at location 'index'
     const newComments = [
         ...comments.slice(0, index), 
         ...comments.slice(index + 1)

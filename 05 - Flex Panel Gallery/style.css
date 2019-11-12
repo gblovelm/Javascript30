@@ -17,6 +17,7 @@ html {
   .panels {
     min-height: 100vh;
     overflow: hidden;
+    display: flex;
   }
 
   .panel {
@@ -34,6 +35,11 @@ html {
     font-size: 20px;
     background-size: cover;
     background-position: center;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
   }
 
   .panel1 { background-image:url(https://source.unsplash.com/gYl-UtwNg_I/1500x1500); }
@@ -47,6 +53,11 @@ html {
     margin: 0;
     width: 100%;
     transition: transform 0.5s;
+    border: 1px solid red;  /* for design only so we know where the edges are */
+    flex: 1 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .panel p {
@@ -55,6 +66,11 @@ html {
     text-shadow: 0 0 4px rgba(0, 0, 0, 0.72), 0 0 14px rgba(0, 0, 0, 0.45);
     font-size: 2em;
   }
+
+  .panel > *:first-child {transform: translateY(-100%);} /*top row of text up off screen */
+  .panel.open-active > *:first-child {transform: translateY(0);} /*text back onto top 1/3 of screen */
+  .panel > *:last-child {transform: translateY(100%);} /*top row of text up off screen */
+  .panel.open-active > *:last-child {transform: translateY(0);} /*text back onto bottom 1/3 of screen */
   
   .panel p:nth-child(2) {
     font-size: 4em;
@@ -62,4 +78,5 @@ html {
 
   .panel.open {
     font-size: 40px;
+    flex: 5;
   }

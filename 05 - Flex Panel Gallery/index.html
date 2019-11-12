@@ -37,10 +37,24 @@
   </div>
 
   <script>
+        const panels = document.querySelectorAll('.panel'); // get NodeList of all the panels
 
-  </script>
+        function toggleOpen() {
+            this.classList.toggle('open');
+        }
 
-
-
+        function toggleActive(e) {
+            //console.log(e.propertyName); // flex-grow and font-size are changing
+            if(e.propertyName.includes('flex')) {  //safari only supports 'flex' not 'flex-grow'
+                this.classList.toggle('open-active');
+            }
+            
+        }
+        // listen for a click event on each panel, then run fn toggleOpen() while looping over them
+        panels.forEach(panel => panel.addEventListener('click', toggleOpen));
+        // listen for event end then call toogleAtive to bring text onto screen
+        panels.forEach(panel => panel.addEventListener('transitionend', toggleActive));
+    </script>
+    
 </body>
 </html>

@@ -13,7 +13,11 @@ Can use template strings to more simply format data:
 `${inventor.first} ${inventor.last}` produces the same result as:
 inventor.first + ' ' + inventor.last
 
-.map - outputs an array the SAME LENGTH as the input
-.filter - outputs a SMALLER array than the input
-.reduce - can calculate a running total as iterate over an array
-.sort - takes two arguments, output +1, -1. Bubbles items up and down an array.
+
+array.map:     outputs an array the SAME LENGTH as the input 
+
+array.filter:  outputs a SMALLER array than the input 
+
+array.reduce:  can calculate a running total as iterate over an array 
+
+array.sort:    takes two arguments, output +1, -1. Bubbles items up and down an array.
